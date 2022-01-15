@@ -1,0 +1,124 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+
+{% include "./header.html.twig" %}
+
+<div class="maincontainer">
+<div class="sidenav">
+  <div class="login-text">
+    <h2>Inscription</h2>
+    <p>Connectez ou inscrivez vous pour accéder au site.</p>
+  </div>
+</div>
+
+<div class="main">
+  <div class="col-md-6 col-sm-12">
+    <div class="login-form">
+
+      {{ form_start(registrationForm) }}
+        <div class="form-group">
+          {{ form_row(registrationForm.nom) }}
+        </div>
+        <div class="form-group">
+          {{ form_row(registrationForm.prenom) }}
+        </div>
+        <div class="form-group">
+          {{ form_row(registrationForm.roles) }}
+        </div>
+        <div class="form-group">
+          {{ form_row(registrationForm.email) }}
+        </div>
+        <div class="form-group">
+          {{ form_row(registrationForm.plainPassword, {
+            label: 'Password'
+          }) }}
+        </div>
+        <div class="form-group checkbox">
+          {{ form_row(registrationForm.agreeTerms) }}
+        </div>
+          
+        <button type="submit" class="btn btn-secondary bg-dark">Inscription</button>
+          <a href="{{ path('app_login') }}"> Se Connecter </a>
+      
+        {{ form_end(registrationForm) }}
+
+    </div>
+  </div>
+</div>
+</div>
+    
+
+
+
+{% block stylesheets %}
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+   <style>
+    .maincontainer{
+      width: 100%;
+      height: 94vh;
+      display: flex;
+    }
+
+    .sidenav{
+      width: 40%;
+      background-color: #000;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .sidenav h2{
+      font-size: 45px;
+    }
+
+    .sidenav p{
+      font-size: 18px;
+    }
+
+    .main{
+      width: 60%;
+    }
+
+    .form-group{
+      display: flex;
+      flex-direction: column;
+      width: 250px;
+      padding-bottom: 10px;
+    }
+
+    .form-group label{
+      padding-bottom: 5px;
+      font-size: 25px;
+    }
+
+    .form-group input{
+      outline: none;
+      border: 2px solid #000;
+      border-radius: 5px;
+      padding-left: 10px;
+      height: 45px;
+    }
+
+    .login-form{
+      margin-top: 20vh;
+      margin-left: 150px;
+    }
+
+    .login-form a{
+      text-decoration: none;
+      color: #fff;
+      background-color: #696969;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+   </style>
+{% endblock %}
+{% endblock %}
+
+
