@@ -5,7 +5,7 @@
 First, clone this repository:
 
 ```bash
-$ git clone
+$ git clone git@github.com:TomBagiau/Docker-App_restaurant.git
 ```
 
 Next, put your Symfony application into `symfony` folder and do not forget to add `symfony.localhost` in your `/etc/hosts` file.
@@ -27,4 +27,6 @@ if Case mismatch between loaded and declared class names: "App\Entity\produit" v
 Error for deleting restaurant but it works.
 
 # Docker-App_Restaurant
+
+# Docker-App_restaurant
 # Docker-App_restaurant
