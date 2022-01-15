@@ -21,12 +21,12 @@ $ docker-compose up -d
 
 ---
 
-if Case mismatch between loaded and declared class names: "App\Entity\produit" vs "App\Entity\Produit".
+if ERROR -> Case mismatch between loaded and declared class names: "App\Entity\produit" vs "App\Entity\Produit".
 -> just refresh
 
-Error for deleting restaurant but it works.
+Error while deleting restaurant but it works.
+
+
 
 # Docker-App_Restaurant
 
-# Docker-App_restaurant
-# Docker-App_restaurant
