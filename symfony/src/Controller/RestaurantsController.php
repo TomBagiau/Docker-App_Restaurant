@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Restaurant;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -39,5 +40,19 @@ class RestaurantsController extends AbstractController
             'restaurant' => $restaurant,
             'produits' => $restaurant->getProduits()
         ]);
+    }
+
+    /**
+     * @Route("restaurant/{id}/delete", name="restaurant_delete")
+     * @param Restaurant $restaurant
+     * @return RedirectResponse
+     */
+    public function deleteRestaurant(Restaurant $restaurant): RedirectResponse
+    {
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($restaurant);
+        $em->flush();
+
+        return $this->redirectToRoute("restaurants");
     }
 }
